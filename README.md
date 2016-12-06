@@ -103,3 +103,10 @@ port 443
 ssh -T git@github.com
 ```
 出现“Are you sure you want to continue connecting(yes/no)?”输入yes按一下“Enter”，出现成功提示即可。
+
+## 3. 资料收集
+阮一峰文章：
+
+[互联网协议入门（一）](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
+
+[互联网协议入门（二）](http://www.ruanyifeng.com/blog/2012/06/internet_protocol_suite_part_ii.html)
