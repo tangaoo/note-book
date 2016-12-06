@@ -54,11 +54,52 @@ SUMMARY.md()这个文件是一本书的目录结构，使用Markdown语法， �
 两个基本命令：
 ```
 gitbook init   //初始化目录结构
-```
-```
 gitbook serve  //编译书籍
 ```
 ### 1.4 GitBook绑定GitHub
 GitBook网站上新建图书，在setting选择中有GitHub一项，选择绑定指定仓库。
 ### 1.5 本地编写推送GitHub
 在本地图书目录做git版本控制，推送到已绑定GitHub仓库中，便会自动关联同步到GitBook网站。
+## 2. 创建GitHub公钥
+### 2.1 首先启动一个Git Bash窗口（非Windows用户直接打开终端）
+### 2.2 执行：
+```
+cd ~/.ssh
+```
+如果返回“… No such file or directory”，说明没有生成过SSH Key，直接进入第4步。否则进入第3步备份!
+### 2.3 备份：
+```
+mkdir key_backup mv id_isa* key_backup
+```
+### 2.4 生成新的Key：（引号内的内容替换为你自己的邮箱）
+```
+ssh-keygen -t rsa -C "your_email@youremail.com"
+```
+输出显示：
+> Generating public/private rsa key pair. Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):
+
+直接回车，不要修改默认路径。
+> Enter passphrase (empty for no passphrase): Enter same passphrase again:
+
+设置一个密码短语，在每次远程操作之前会要求输入密码短语！闲麻烦可以直接回车，不设置。
+### 2.5 成功：
+> Your identification has been saved in /Users/your_user_directory/.ssh/id_rsa. Your public key has been saved in /Users/your_user_directory/.ssh/id_rsa.pub. The key fingerprint is: ... ..
+
+### 2.6 提交公钥：
+#### 2.6.1 找到.ssh文件夹，用文本编辑器打开“id_rsa.pub”文件，复制内容到剪贴板。
+#### 2.6.2 打开 https://github.com/settings/ssh ，点击 Add SSH Key 按钮，粘贴进去保存即可。
+### 2.7 push出错：
+> ssh: connect to host github.com port 22: Bad file number
+
+**解决办法：**
+在用户根目录(cd ~/.ssh)下的.ssh目录下新建一个config文件，指定端口为443，因为22端口被禁用了。
+```
+host github.com
+hostname ssh.github.com
+port 443
+```
+**测试：**
+```
+ssh -T git@github.com
+```
+出现“Are you sure you want to continue connecting(yes/no)?”输入yes按一下“Enter”，出现成功提示即可。
