@@ -394,3 +394,38 @@ $ git stash pop
 # 生成一个可供发布的压缩包
 $ git archive
 ```
+## 5. Atom相关
+### 5.1 离线安装插件
+`git clone`插件到本地`C:\Users\tango\.atom\packages`目录，从对应GitHub上。
+```
+apm install   #进入下载插件根目录
+```
+### 5.2 插件推荐
+#### 5.2.1 linter
+Linter is a **base linter** provider for the hackable Atom Editor. Additionally, you need to install a specific linter for your language. You will find a full list below in the Available linters section.
+#### 5.2.1 linter write good
+依赖linter，Naive linter for English prose for developers who can't write good and wanna learn to do other stuff good too.
+### 5.3 和系统其他软件快捷键冲突
+'ctrl-shift-alt-f'全局搜索无效，发现和搜狗输入法快捷键冲突。
+## 6. 读ryf的js教程
+[js标准参考教程-ryf](http://javascript.ruanyifeng.com/grammar/object.html)
+### 6.1 不懂得地方
+with区块内部，模板变量name可以被对象o的属性替换，而p依然是全局变量。这就是很多模板引擎的实现原理。
+```
+var str = 'Hello <%= name %>!';
+
+var o = {
+  name: 'Alice'
+};
+
+function tmpl(str, obj) {
+  str = 'var p = [];' +
+    'with (obj) {p.push(' + parser(str) + ')};' +
+    'return p;'
+  var r = (new Function('obj', str))(obj);
+  return r.join('');
+}
+
+tmpl(str, o)
+// "Hello Alice!"
+```
