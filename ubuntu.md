@@ -14,5 +14,49 @@
 
 ### 3. 启用点击左边dock图表最小化
 
-1. gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+- gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
+### 4. markdown语法
+
+- [markdown语法参考](https://shd101wyy.github.io/markdown-preview-enhanced/#/markdown-basics?id=links)
+
+### 5. ubuntu安装、卸载程序
+1. 安装
+    ```
+    dpkg -i xxx
+    ```
+2. 卸载
+   ``` 
+   apt-get remove   
+   #删除已安装的软件包（保留配置文件），不会删除依赖软件包，保留配置文件；
+   
+   apt-get purge    
+   #删除已安装的软件包（不保留配置文件)，删除软件包，同时删除相应依赖软件包；
+   
+   apt-get autoremove 
+   #删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件；
+
+   apt-get clean
+   删除已经安装过的的软件安装包；即自动将/var/cache/apt/archives/下的所有deb删掉，相当于清理下载的软件安装包；
+   ```
+### 6. rar文件解压
+
+1. 默认无法解压rar，需要rar工具
+2. rar压缩工具
+   ```
+   sudo apt-get install rar
+   ```
+3. rar解压工具
+   ```
+   sudo apt-get install unrar
+   ```
+4. 压缩
+   ```
+   rar a FileName.rar DirName
+   ```
+5. 解压
+   ```
+   rar x FileName.rar
+   ```
+
+   
