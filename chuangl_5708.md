@@ -22,6 +22,7 @@
 
   ```
   Host# ./ti-processor-sdk-linux-rt-am57xx-evm-04.03.00.05-Linux-x86-Install.bin
+  
   ```
 
 - 交叉编译环境设置
