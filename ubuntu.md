@@ -58,5 +58,14 @@
    ```
    rar x FileName.rar
    ```
-
+### 7. 安装oh-my-zsh
+1. 安装 **zsh sudo apt install zsh**
+2. 从改默认shell，重启 **chsh -s /bin/zsh**
+3. 下载oh-my-zsh脚本，并执行 
+   ```
+   wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+   sh install.sh
+   ```
+4. 更改zsh配置文件，主题 **ZSH_THEME="robbyrussell"**
+5. 增加插件 **pplugins=(git pip z history-substring-search extract vi-mode)**
    
