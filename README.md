@@ -88,8 +88,14 @@ ssh-keygen -t rsa -C "your_email@youremail.com"
 ### 2.6 提交公钥：
 #### 2.6.1 找到.ssh文件夹，用文本编辑器打开“id_rsa.pub”文件，复制内容到剪贴板。
 #### 2.6.2 打开 https://github.com/settings/ssh ，点击 Add SSH Key 按钮，粘贴进去保存即可。
+
 ### 2.7 push出错：
 > ssh: connect to host github.com port 22: Bad file number
+### 2.8 macos
+在macos系统中还要执行如下命令：
+```
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+```
 
 **解决办法：**
 在用户根目录(cd ~/.ssh)下的.ssh目录下新建一个config文件，指定端口为443，因为22端口被禁用了。
