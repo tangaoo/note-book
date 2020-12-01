@@ -68,4 +68,6 @@
    ```
 4. 更改zsh配置文件，主题 **ZSH_THEME="robbyrussell"**
 5. 增加插件 **pplugins=(git pip z history-substring-search extract vi-mode)**
-   
+
+### 8. happypeter网站更改
+   [happypeter网站](http://haoduoshipin.com/all.html )
