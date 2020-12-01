@@ -52,7 +52,7 @@ SUMMARY.md()这个文件是一本书的目录结构，使用Markdown语法， �
 列表加链接，链接中可以使用目录，也可以不必使用。
 
 两个基本命令：
-```
+ ```
 gitbook init   //初始化目录结构
 gitbook serve  //编译书籍
 ```
@@ -237,7 +237,7 @@ $ git merge [branch]
 $ git cherry-pick [commit]
 
 # 删除分支
-$ git branch -d [branch-name]
+$ git branch -D [branch-name]
 
 # 删除远程分支
 $ git push origin --delete [branch-name]
