@@ -1,1 +1,7 @@
-/Users/yangmengyun/.vimrc
+set nu       
+
+syntax on   
+
+set ts=4   
+
+inoremap jj <Esc>`^ 
