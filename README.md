@@ -155,6 +155,9 @@ $ git config [--global] user.email "[email address]"
 ```
 ### 4.4 增加删除控制文件
 ```
+# 查看所有被跟踪文件 
+$ git ls-files
+
 # 添加指定文件到暂存区
 $ git add [file1] [file2] ...
 
