@@ -438,3 +438,5 @@ function tmpl(str, obj) {
 tmpl(str, o)
 // "Hello Alice!"
 ```
+## 7. Macos配置 
+### 7.1 vscode 调试环境，必须要下载CodeLLDB插件，方可开启debug功能

@@ -71,3 +71,6 @@
 
 ### 8. happypeter网站更改
    [happypeter网站](http://haoduoshipin.com/all.html )
+
+### 9. 中文文件夹改英文
+使用 LC_ALL=C xdg-user-dirs-update --force 命令可以强制创建英语目录
