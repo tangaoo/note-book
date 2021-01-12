@@ -69,3 +69,10 @@
 4. 更改zsh配置文件，主题 **ZSH_THEME="robbyrussell"**
 5. 增加插件 **pplugins=(git pip z history-substring-search extract vi-mode)**
    
+### 8. 安装monaco字体
+
+1. sudo mkdir -p /usr/share/fonts/truetype/ttf-monaco && \
+2. sudo wget https://gist.github.com/rogerleite/b50866eb7f7b5950da01ae8927c5bd61/raw/862b6c9437f534d5899e4e68d60f9bf22f356312/mfont.ttf -O - > \
+/usr/share/fonts/truetype/ttf-monaco/Monaco_Linux.ttf && \
+3. sudo fc-cache
+   
