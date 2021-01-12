@@ -1,0 +1,144 @@
+{
+	// Place your snippets for c here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"file header comments":{
+		"prefix": "hd",
+		"body":[ 
+			"/*!The TT Library",
+			" *",
+			" * @Copyright (C) 2019-$CURRENT_YEAR, TTLIB",
+			" *",
+			" * @file       $TM_FILENAME",
+			" * @ingroup    ${1:${TM_FILENAME_BASE/(.*)/${1:/downcase}/i}}",			
+			" * @author     tango",
+			" * @date       $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE ",
+			" * @brief      ${2:$TM_FILENAME file}",
+			" */",
+			"$0"
+		]
+	},
+	
+	"note":{
+		"prefix": "zs",
+		"body":[ 
+			 "/*! $0" ,
+			 " *",
+			 " */"
+		]
+	},
+
+	"zhushi":{
+		"prefix": "hs",
+		"body":[ 
+			 "/*! $0" ,
+			 " *",
+			 " * @param a             brief",
+			 " *",
+			 " * @return              tt_void",
+			 " */"
+		]
+	},
+
+	"trace":{
+		"prefix": "trace",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * trace",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"includes":{
+		"prefix": "inc",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * includes",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"typedef":{
+		"prefix": "typ",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * types",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"implementation":{
+		"prefix": "imp",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * implementation",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"extern":{
+		"prefix": "ex",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * extern",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"macros":{
+		"prefix": "mac",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * macros",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"interfaces":{
+		"prefix": "intf",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * interfaces",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"declaration":{
+		"prefix": "decl",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * declaration",
+			 " */",
+			 "$0"
+		]
+	},
+
+	"globals":{
+		"prefix": "glo",
+		"body":[ 
+			 "/* //////////////////////////////////////////////////////////////////////////////////////",
+ 			 " * globals",
+			 " */",
+			 "$0"
+		]
+	},
+
+}

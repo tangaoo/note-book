@@ -75,4 +75,10 @@
 2. sudo wget https://gist.github.com/rogerleite/b50866eb7f7b5950da01ae8927c5bd61/raw/862b6c9437f534d5899e4e68d60f9bf22f356312/mfont.ttf -O - > \
 /usr/share/fonts/truetype/ttf-monaco/Monaco_Linux.ttf && \
 3. sudo fc-cache
-   
+
+### 9. happypeter网站更改
+   [happypeter网站](http://haoduoshipin.com/all.html )
+
+### 10. 中文文件夹改英文
+使用 LC_ALL=C xdg-user-dirs-update --force 命令可以强制创建英语目录
+

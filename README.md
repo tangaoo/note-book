@@ -52,7 +52,7 @@ SUMMARY.md()这个文件是一本书的目录结构，使用Markdown语法， �
 列表加链接，链接中可以使用目录，也可以不必使用。
 
 两个基本命令：
-```
+ ```
 gitbook init   //初始化目录结构
 gitbook serve  //编译书籍
 ```
@@ -88,8 +88,14 @@ ssh-keygen -t rsa -C "your_email@youremail.com"
 ### 2.6 提交公钥：
 #### 2.6.1 找到.ssh文件夹，用文本编辑器打开“id_rsa.pub”文件，复制内容到剪贴板。
 #### 2.6.2 打开 https://github.com/settings/ssh ，点击 Add SSH Key 按钮，粘贴进去保存即可。
+
 ### 2.7 push出错：
 > ssh: connect to host github.com port 22: Bad file number
+### 2.8 macos
+在macos系统中还要执行如下命令：
+```
+ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+```
 
 **解决办法：**
 在用户根目录(cd ~/.ssh)下的.ssh目录下新建一个config文件，指定端口为443，因为22端口被禁用了。
@@ -149,6 +155,9 @@ $ git config [--global] user.email "[email address]"
 ```
 ### 4.4 增加删除控制文件
 ```
+# 查看所有被跟踪文件 
+$ git ls-files
+
 # 添加指定文件到暂存区
 $ git add [file1] [file2] ...
 
@@ -231,7 +240,7 @@ $ git merge [branch]
 $ git cherry-pick [commit]
 
 # 删除分支
-$ git branch -d [branch-name]
+$ git branch -D [branch-name]
 
 # 删除远程分支
 $ git push origin --delete [branch-name]
@@ -429,3 +438,5 @@ function tmpl(str, obj) {
 tmpl(str, o)
 // "Hello Alice!"
 ```
+## 7. Macos配置 
+### 7.1 vscode 调试环境，必须要下载CodeLLDB插件，方可开启debug功能
