@@ -74,3 +74,22 @@
 
 ### 9. 中文文件夹改英文
 使用 LC_ALL=C xdg-user-dirs-update --force 命令可以强制创建英语目录
+
+### 10. ssh
+1. ssh是网上两台计算机互联的一套协议。
+2. 默认端口22.
+3. 安装
+   ```
+   sudo apt-get update  # 更新 apt-get 工具
+   sudo apt-get install openssh-server
+   sudo apt-get install openssh-client 	
+   ``` 
+4. 修改配置文件sudo vim /etc/ssh/sshd_config
+   ```
+   Port 22                       # 默认22端口，如果有端口占用可以自己修改
+   PermitRootLogin yes           # 如果配置文件中没有这行内容，需要手动添加
+   PasswordAuthentication yes    # 密码验证登录
+   ```
+5. 重启服务 sudo service ssh start
+6. 登陆 ssh name@ip
+7. 上传下载 scp -r tao@192.168.31.205:~/Desktop/test.txt ./  (重远端下载文件到本地，上传反之，类似cp操作) 
