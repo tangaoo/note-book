@@ -68,14 +68,21 @@
    ```
 4. 更改zsh配置文件，主题 **ZSH_THEME="robbyrussell"**
 5. 增加插件 **pplugins=(git pip z history-substring-search extract vi-mode)**
+   
+### 8. 安装monaco字体
 
-### 8. happypeter网站更改
+1. sudo mkdir -p /usr/share/fonts/truetype/ttf-monaco && \
+2. sudo wget https://gist.github.com/rogerleite/b50866eb7f7b5950da01ae8927c5bd61/raw/862b6c9437f534d5899e4e68d60f9bf22f356312/mfont.ttf -O - > \
+/usr/share/fonts/truetype/ttf-monaco/Monaco_Linux.ttf && \
+3. sudo fc-cache
+
+### 9. happypeter网站更改
    [happypeter网站](http://haoduoshipin.com/all.html )
 
-### 9. 中文文件夹改英文
+### 10. 中文文件夹改英文
 使用 LC_ALL=C xdg-user-dirs-update --force 命令可以强制创建英语目录
 
-### 10. ssh
+### 11. ssh
 1. ssh是网上两台计算机互联的一套协议。
 2. 默认端口22.
 3. 安装
