@@ -100,3 +100,21 @@
 5. 重启服务 sudo service ssh start
 6. 登陆 ssh name@ip
 7. 上传下载 scp -r tao@192.168.31.205:~/Desktop/test.txt ./  (重远端下载文件到本地，上传反之，类似cp操作) 
+
+### 12. ack 字符串查找（擅长源代码查找）
+1. install
+   ```
+   sudo aptitude install ack-grep
+   sudo ln -s `which ack-grep` /bin/ack
+   ```
+2. ack默认忽略许多文件格式，下面命令查看具体哪些。
+   ```
+   ack --help-types|less
+   ```
+3. example
+   ```
+   ack hello          #查找hello字符串
+   ack -a hello       #取消默认忽略
+   ack --js hello     #查找某特定语言
+   ack --nojs hello   #排除某特定语言
+   ```
