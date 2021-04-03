@@ -118,3 +118,19 @@
    ack --js hello     #查找某特定语言
    ack --nojs hello   #排除某特定语言
    ```
+
+### 13. lsusb 查看usb相关属性（device id ...）
+
+### 14. `ubuntu` 添加环境变量
+1. 在profile文件中追加环境变量
+   ```
+   sudo vim /etc/profile
+   ```
+2. 插入环境变量（追加在profile文件末尾）
+   ```
+   export PATH=$PATH:/opt/EmbedSky/4.3.3/bin
+   ```
+3. 立即生效profile
+   ```
+   source profile
+   ```
