@@ -134,3 +134,18 @@
    ```
    source profile
    ```
+### 15. Embedded device setting time
+1. set system time
+   ```
+   date -s "20210-04-04 18:00:00"
+   ```
+2. write time back RTC(hardware)
+   ```
+   hwclock -w
+   ```
+3. recover system for RTC(hardware)
+   ```
+   hwclock -s
+   ```
+### 16. Cross Compiler 交叉编译工具
+...
