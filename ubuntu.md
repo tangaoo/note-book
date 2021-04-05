@@ -148,4 +148,71 @@
    hwclock -s
    ```
 ### 16. Cross Compiler 交叉编译工具
-...
+1. 获取途径 ？
+
+### 17. Linux kernel移植
+1. 获取官方源码 https://www.kernel.org/
+   
+2. 配置编译环境
+   * 交叉编译工具
+   * arch 选择
+3. 选择mach芯片（例如 arch/arm/mach-s3c2440/mach-smdk2440.c） 
+   
+4. 改开发版对应时钟频率
+   * 例如 TQ2440开发板对应修改文件在 arch/arm/mach-s3c2440/mach-smdk2440.c 
+  
+5. make menuconfig
+   * 选择最加载接近模版 （arch/arm/configs/）
+   * 修改相关配置，保存
+  
+6. 配置文件另存为 .config
+   
+7. 修改机器码
+   * 与uboot对应，在目录 arch/arm/tools/mach-types
+
+8. 编译内核
+   ```
+   make zImage
+   ```
+
+### 18. 编译驱动（要在 kernel 内部实现驱动编译）
+1. 在内核相关目录添加驱动源码（例如 drives/char）
+
+2. 改同级目录下 Kcongfig 文件，为了能在 make menuconfig 工具中显示
+   
+3. 改同级目录下 Makefile 文件
+   
+4. make menuconfig 配置添加该驱动
+   * M 表示编译进模块，或直接编译进来内核，或不编译
+
+5. 编译
+   * make SUBDIR=drives/char/ modules
+
+6. 装载与卸载
+   * insmod
+   * rmmod
+
+### 19. TFTP设置（宿主机与开发版传数据）
+1. 安装软件
+   ```
+   $ sudo apt install tftpd-hpa
+   ```
+2. 配置
+   ```
+   $ sudo vim /etc/default/tftpd-hpa
+   ```
+   * 改tftp路径
+   * OPTIONS 增加 --create
+
+3. 重启tftp
+   ```
+   $ sudo systemctl restart tftpd-hpa
+   ```
+
+4. 详见链接 https://linuxhint.com/install_tftp_server_ubuntu/
+   
+### 20. 内核编译问题
+1. 需要用root命令编译
+   * sudo su  然后在编译。应该有其他方法？
+
+
