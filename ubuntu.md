@@ -215,4 +215,34 @@
 1. 需要用root命令编译
    * sudo su  然后在编译。应该有其他方法？
 
+### 21. nfs
+0. ref
+   https://www.howtoforge.com/how-to-install-nfs-client-and-server-on-ubuntu-2004/
+   https://blog.csdn.net/niepangu/article/details/50274111
+
+1. PC is server, Embeded board is client.
+   
+2. install
+   ```
+   $ sudo apt install nfs-kernel-server
+   ```
+
+3. config
+   ```
+   $ sudo mkdir /var/nfs/general -p
+   $ sudo chown nobody:nogroup /var/nfs/general
+   ```
+   * change /etc/exports file
+   * add `/var/nfs/general    client_ip(rw,sync,no_subtree_check)` to the file end
+   * restart
+   ```
+   $ sudo systemctl restart nfs-kernel-server
+   ```
+
+4. try mount from Embeded board side(client)
+   ```
+   # mount –t nfs 192.168.1.8:/var/nfs/general /mnt –o nolock
+   # cd /mnt
+   # ls
+   ```
 
